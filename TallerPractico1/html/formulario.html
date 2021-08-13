@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos-formulario.css">
+    <title>Formulario Registro</title>
+</head>
+<body>
+
+    <div id="container-all">
+        <h2>Formulario de Registro de Candidatos de la Región Centroamericana</h2>
+        <form action="javascript:void(0);" name="formulario" id="formulario" onsubmit="validar()">
+            <div id="first-inputs">
+                <label for="nombrePersona">Nombres: </label>
+                <input type="text" name="nombrePersona" id="nombrePersona" class="nombrePersona" placeholder="Nombres">
+                <label for="apellidoPersona">Apellidos: </label>
+                <input type="text" name="apellidoPersona" id="apellidoPersona" class="apellidoPersona" placeholder="Apellidos">
+                <br><br>
+                <label for="paisNacimiento">País de Nacimiento</label>
+                <select name="paisNacimiento" id="paisNacimiento">
+                    <option value="#">----------</option>
+                    <option value="0">Guatemala</option>
+                    <option value="1">El Salvador</option>
+                    <option value="2">Honduras</option>
+                    <option value="3">Nicaragua</option>
+                    <option value="4">Costa Rica</option>
+                    <option value="5">Panamá</option>
+                </select>
+                <br><br>
+                <label for="emailPersona">Correo Electrónico: </label>
+                <input type="email" name="emailPersona" id="emailPersona" class="emailPersona" placeholder="Email">
+                <br><br>
+                <label for="genero">Genero: </label>
+                <div id="genero">
+                    <label for="rdbMasculino">Masculino</label>
+                    <input type="radio" name="rdbGenero" id="rdbMasculino" class="rdbMasculino" value="Masculino">
+                    <label for="rdbMasculino">Femenino</label>
+                    <input type="radio" name="rdbGenero" id="rdbFemenino" class="rdbFemenino" value="Femenino">
+                </div>
+                <br>
+                <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="fechaNacimiento" >
+            </div>
+   
+            <div id="second-inputs">
+                <label for="paisNacimiento">País de Residencia</label>
+                <select onchange="imprimirDeptos(value)" name="paisResidencia" id="paisResidencia" class="paisResidencia">
+                    <option value="0">------------</option>
+                    <option value="1">Guatemala</option>
+                    <option value="2">El Salvador</option>
+                    <option value="3">Honduras</option>
+                    <option value="4">Nicaragua</option>
+                    <option value="5">Costa Rica</option>
+                    <option value="6">Panamá</option>
+                </select><br><br>
+                <label for="departamentoResidencia">Departamento: </label>
+                <select name="departamentoResidencia" id="departamentoResidencia" class="departamentoResidencia">
+                    <option value="0">------------</option>
+                </select>
+                <br><br>
+                <label for="telefonoCasa">Telefono de Casa: </label>
+                <input type="text" name="telefonoCasa" id="telefonoCasa" class="telefonoCasa" placeholder="Telefono de Casa" onkeypress="return numbersOnly(this, event)">
+                <br><br>
+                <label for="telefonoCelular">Telefono Celular: </label>
+                <input type="text" name="telefonoCelular" id="telefonoCelular" class="telefonoCelular" placeholder="Telefono Celular" onkeypress="return numbersOnly(this, event)">
+                <br><br>
+                <label for="domicilioPersona">Domicilio: </label><br>
+                <input type="text" name="domicilioPersona" id="domicilioPersona" class="domicilioPersona" placeholder="Domicilio"> <br><br>
+                
+            </div>
+            <div id="btnSubmit">
+                <input type="submit" name="submit" value="Enviar" onclick="finish()">
+            </div>
+        </form>
+    </div>
+    <div id="advertencias">
+
+    </div>
+    <table id='candidatos'> </table>
+    <script src="../js/validacion.js"></script>
+    <script src="../js/paises.js"></script>
+</body>
+</html>
